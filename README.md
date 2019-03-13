@@ -86,3 +86,6 @@ export default {
 </script>
 ```
 
+### License
+
+The MIT License (MIT). Please see [License File](https://github.com/mazhaolin/vue-vaptcha/blob/master/LICENSE.MD) for more information.
