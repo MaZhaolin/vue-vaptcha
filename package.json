@@ -1,0 +1,52 @@
+{
+  "name": "vue-vaptcha",
+  "description": "VAPTCHA plugin for Vue2",
+  "version": "1.0.0",
+  "author": "MaZhaolin",
+  "private": false,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js"
+  },
+  "main": "dist/vue-vaptcha.esm.js",
+  "files": [
+    "src/*.js",
+    "dist/*.js"
+  ],
+  "keywords": [
+    "vaptcha",
+    "vue",
+    "captcha"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaZhaolin/vue-vaptcha.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MaZhaolin/vue-vaptcha/issues"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "rollup": "^0.59.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-less-loader": "^0.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-uglify-es": "^0.0.1",
+    "rollup-plugin-vue": "^4.7.1",
+    "rollup-watch": "^4.3.1",
+    "vue": "^2.6.6",
+    "vue-template-compiler": "^2.6.8"
+  }
+}

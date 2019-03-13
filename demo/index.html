@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      #app {
+        width: 400px;
+        margin: 200px auto;
+      }
+      button {
+        margin-top: 20px;
+        line-height: 36px;
+        height: 36px;
+        border: 1px solid #555;
+        background: #fff;
+        padding: 0 20px;
+        border-radius: 3px;
+        vertical-align: top;
+        outline: none;
+        transition: 0.3s;
+      }
+      button:hover {
+        background: #555;
+        color: #fff;
+      }
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <h2>Click Mode</h2>
+      <div>
+        Token:
+        <pre>{{ clickToken }}</pre>
+      </div>
+      <Vaptcha
+        ref="clickCaptcha"
+        v-model="clickToken"
+        color="#8c00ff"
+      ></Vaptcha>
+      <button @click="$refs.clickCaptcha.vaptcha.reset()">Reset</button>
+
+      <h2>Embed Mode</h2>
+      <div>
+        Token:
+        <pre>{{ embedToken }}</pre>
+      </div>
+      <Vaptcha
+        ref="embedCaptcha"
+        style="height: 230px"
+        v-model="embedToken"
+        type="embed"
+      ></Vaptcha>
+      <button @click="$refs.embedCaptcha.vaptcha.reset()">Reset</button>
+
+      <h2>Invisible Mode</h2>
+      <div>
+        Token:
+        <pre>{{ invisibleToken }}</pre>
+      </div>
+      <div>
+        <button @click="invisibleCaptchaValidate">Click Verify</button>
+        <button @click="captcha.reset()">Reset</button>
+      </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.4/vue.js"></script>
+    <script src="../dist/vue-vaptcha.js"></script>
+    <script>
+      Vue.use(
+        VueVaptcha({
+          vid: '5b56e495fc6513d4a403ff92',
+          lang: 'en'
+        })
+      )
+      new Vue({
+        el: '#app',
+        data: {
+          embedToken: '',
+          clickToken: '',
+          invisibleToken: '',
+          captcha: null
+        },
+        mounted() {
+          const _this = this
+          this.$vaptcha.getInvisibleVaptcha().then(function(obj) {
+            obj.listen('pass', function() {
+              _this.invisibleToken = obj.getToken()
+            })
+            _this.captcha = obj
+          })
+        },
+        methods: {
+          invisibleCaptchaValidate: function() {
+            this.captcha.validate()
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

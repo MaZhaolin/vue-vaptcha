@@ -1,0 +1,10 @@
+{
+  "presets": [["@babel/preset-env"]],
+  "env": {
+    "test": {
+      "presets": ["env"]
+    }
+  },
+  "comments": false,
+  "plugins": ["transform-vue-jsx"]
+}
