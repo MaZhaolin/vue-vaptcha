@@ -7,13 +7,13 @@
 ### using npm
 
 ```shell
-npm install vue-vaptcha
+npm install -S vue-vaptcha
 ```
 
 ### Import in Browser
 
 ```html
-<script src="/dist/vue-vaptcha.js"></script>
+<script src="/dist/vue-vaptcha.min.js"></script>
 ```
 
 
