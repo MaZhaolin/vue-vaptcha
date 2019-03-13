@@ -1,7 +1,7 @@
 {
   "name": "vue-vaptcha",
   "description": "VAPTCHA plugin for Vue2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "MaZhaolin",
   "private": false,
   "publishConfig": {
@@ -11,7 +11,7 @@
     "dev": "rollup -c rollup.config.js -w",
     "build": "rollup -c rollup.config.js"
   },
-  "main": "dist/vue-vaptcha.esm.js",
+  "main": "dist/vue-vaptcha.js",
   "files": [
     "src/*.js",
     "dist/*.js"

@@ -22,7 +22,7 @@ module.exports = [
   {
     input: 'src/index.js',
     output: {
-      file: 'dist/vue-vaptcha.esm.js',
+      file: 'dist/vue-vaptcha.es.js',
       format: 'es'
     },
     plugins
@@ -31,6 +31,15 @@ module.exports = [
     input: 'src/index.js',
     output: {
       file: 'dist/vue-vaptcha.js',
+      format: 'umd',
+      name: 'VueVaptcha'
+    },
+    plugins: [...plugins]
+  },
+  {
+    input: 'src/index.js',
+    output: {
+      file: 'dist/vue-vaptcha.min.js',
       format: 'umd',
       name: 'VueVaptcha'
     },
