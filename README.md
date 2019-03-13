@@ -16,6 +16,8 @@ npm install vue-vaptcha
 <script src="/dist/vue-vaptcha.js"></script>
 ```
 
+
+
 ## usage
 
 ### Import
@@ -84,6 +86,34 @@ export default {
   }
 }
 </script>
+```
+
+## options
+
+>  Please read Vapctha document: [https://www.vaptcha.com/document/install](https://www.vaptcha.com/document/install)
+
+### Configuration global options
+
+Example: 
+
+```javascript
+import VueVaptcha from 'vue-vaptcha'
+const GlobalOptions = {
+    vid: '****',
+    type: 'click',
+    color: '#8c00ff',
+    style: 'light',
+    lang: 'en'
+}
+Vue.use(VueVaptcha(GlobalOptions))
+```
+
+### Vaptcha Component prop
+
+Example: 
+
+```html
+<Vaptcha vid="****" color="#8c00ff" vp-style="dark" lang="en" />
 ```
 
 ### License
