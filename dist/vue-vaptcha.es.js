@@ -4,7 +4,7 @@ var loadV2Script = function loadV2Script() {
   } else {
     return new Promise(function (resolve) {
       var script = document.createElement('script');
-      script.src = 'https://cdn.vaptcha.com/v2.js';
+      script.src = 'https://v.vaptcha.com/v3.js';
       script.async = true;
 
       script.onload = script.onreadystatechange = function () {

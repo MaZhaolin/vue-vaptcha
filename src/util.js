@@ -5,7 +5,7 @@ export const loadV2Script = () => {
   } else {
     return new Promise(resolve => {
       var script = document.createElement('script')
-      script.src = 'https://cdn.vaptcha.com/v2.js'
+      script.src = 'https://v.vaptcha.com/v3.js'
       script.async = true
       script.onload = script.onreadystatechange = function() {
         if (
